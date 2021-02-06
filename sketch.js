@@ -77,7 +77,7 @@ function draw() {
      rickSprite = createSprite(300,400,30,30)
       rickSprite.scale = 0.4;
       rickSprite.addImage(rickAstley)
-      if(score < 1000){
+      if(score <= 1000){
         rickSprite.visible = false
       }
     }
