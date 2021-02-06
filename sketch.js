@@ -7,6 +7,13 @@ var score = 0;
 var state   = "play";
 var wall1, wall2, wallGroup
 var immunity, immunityIMG, immunityGroup, immunityDecider
+var rickAstley;
+var rickSprite;
+
+
+
+
+
 
 
 
@@ -21,6 +28,7 @@ obstacle1Image = loadImage("Obstacle1.png")
   obstacle2Animation = loadAnimation("obstacle2_1.png","obstacle2_2.png");
   obstacle3Image = loadImage("obstacle3.png")
   immunityIMG = loadImage("immunity.png")
+  rickAstley = loadImage("Ra50b8b482d66b8722f2e2b391e01119e.png")
  
   
 }
@@ -64,6 +72,12 @@ function setup() {
 function draw() {
   background("white");
   if(state === "play"){
+    
+    if(score>=1000){
+     rickSprite = createSprite(300,400,30,30)
+      rickSprite.scale = 0.4;
+      rickSprite.addImage(rickAstley)
+    }
 
 
     if(state != "immunity"){
