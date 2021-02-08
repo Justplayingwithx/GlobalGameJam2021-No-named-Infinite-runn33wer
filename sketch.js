@@ -83,18 +83,9 @@ function draw() {
     }
 
 
-    if(state != "immunity"){
-
-      immunityDecider = random(1,5)
-   
-      if(immunityDecider === 5){
-        console.log("sdfsd")
-        immunity = createSprite(Math.round(random (30,560)),600,20,20)
-        immunity.addImage(immunityIMG)
-        immunity.velocityY = -8 - score/300;
-        immunityGroup.add(immunity)
-      }
-     }
+  
+     
+      
 
 
 
@@ -166,9 +157,10 @@ function draw() {
 
 function spawnObject(){
   if (frameCount%20 === 0){
-    var decider = Math.round(random(1,3));
+    var decider = Math.round(random(1,7));
     switch(decider){
         case 1:
+        console.log("case 1,obstacle1")
         obstacle1 = createSprite(Math.round(random(30,560)),600,20,20)
         obstacle1.addImage(obstacle1Image)
         obstacle1.velocityY = -8 -score/300;
@@ -176,16 +168,48 @@ function spawnObject(){
         
         break;
         case 2:
+        console.log("case 2, obstacle2")
         obstacle2 = createSprite(Math.round(random(30,560)),600,20,20);
         obstacle2.addAnimation("obstacle2_1.png","obstacle2_2.png")
         obstacle2.velocityY = -8 - score/300;
         obstacleGroup.add(obstacle2)
         break;
       case 3: 
+        console.log("case 3, obstacle 3")
         obstacle3 =  createSprite(Math.round(random(30,560)),600,20,20)
         obstacle3.addImage(obstacle3Image);
         obstacle3.velocityY = -8 - score/300;
         obstacleGroup.add(obstacle3);
+        break;
+      case 4:
+      console.log("immunity spawned, case 4")
+        immunity = createSprite(Math.round(random (30,560)),600,20,20)
+        immunity.addImage(immunityIMG)
+        immunity.velocityY = -8 - score/300;
+        immunityGroup.add(immunity)
+        break;
+      case 5:
+        console.log("case 5, obstacle 1")
+        obstacle1 = createSprite(Math.round(random(30,560)),600,20,20)
+        obstacle1.addImage(obstacle1Image)
+        obstacle1.velocityY = -8 -score/300;
+        obstacleGroup.add(obstacle1)
+      case 6:
+        console.log("case 6, obstacle 2")
+        obstacle2 = createSprite(Math.round(random(30,560)),600,20,20);
+        obstacle2.addAnimation("obstacle2_1.png","obstacle2_2.png")
+        obstacle2.velocityY = -8 - score/300;
+        obstacleGroup.add(obstacle2)
+        break;
+      case 7:
+        console.log("case 7, obstacle 3")
+        obstacle3 =  createSprite(Math.round(random(30,560)),600,20,20)
+        obstacle3.addImage(obstacle3Image);
+        obstacle3.velocityY = -8 - score/300;
+        obstacleGroup.add(obstacle3);
+        break;
+        
+        
     }
 
     
